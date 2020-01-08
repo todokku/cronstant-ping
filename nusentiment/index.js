@@ -6,7 +6,7 @@ const nu = {
 	browser: null,
 	page: null,
 	initialize: async () => {
-		nu.browser = await puppeteer.launch({ headless: false });
+		nu.browser = await puppeteer.launch({ headless: true });
 		nu.page = await nu.browser.newPage();
 		await nu.page.emulate(iPhone);
 		await nu.page.goto(BASE_URL, { waitUntil: 'networkidle2' });
