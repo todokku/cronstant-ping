@@ -18,7 +18,9 @@ const nu = {
 		await nu.page.click('.random-cat');
 		await nu.page.waitFor(1000);
 		await nu.page.click('.signin button');
-		await nu.page.waitForNavigation({ waitUntil: 'networkidle2' });
+		await nu.page.waitFor(60000);
+		// following statements returns timeout error.
+		// await nu.page.waitForNavigation({ waitUntil: 'networkidle2' });
 		console.log(`>>> ✅ Task complete.`);
 		await nu.browser.close();
 	}
